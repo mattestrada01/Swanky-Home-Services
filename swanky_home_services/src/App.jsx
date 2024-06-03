@@ -1,35 +1,33 @@
 import styles from './style';
 
-import {Navbar, About, Button, Contact, Footer, Hero, Reviews, Services} from './components';
+import { Navbar, About, Contact, Footer, Hero, Reviews, Services } from './components';
 
-const App = () =>  (
-    <div className="bg-primary w-full overflow-hidden">
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
-          NavBar
-        </div>
+const App = () => (
+  <div className="w-full overflow-hidden">
+    <div className={`${styles.paddingX} ${styles.flexCenter} ${styles.bgB} ${styles.navbarFixed}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Navbar />
       </div>
-
-
-      <div className={`bg-primary ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
-          Hero
-        </div>
-      </div>
-
-
-      <div className={`bg-primary ${styles.flexStart} ${styles.paddingX}`}>
-        <div className={`${styles.boxWidth}`}>
-            About
-            Button
-            Contact
-            Footer
-            Reviews
-            Services
-        </div>
-      </div>
-
     </div>
+
+    <div className={`${styles.bgGradient}`}>
+      <div className={`${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Hero />
+        </div>
+      </div>
+
+      <div className={`${styles.flexStart} ${styles.paddingX} ${styles.bgGradient}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Services />
+          <About />
+          <Reviews />
+          <Contact />
+          <Footer />
+        </div>
+      </div>
+    </div>
+  </div>
 );
 
-export default App
+export default App;
