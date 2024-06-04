@@ -23,8 +23,11 @@ import twitter from "./twitter.svg";
 import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
-import landing from "./landing.png"
-import home from "./home.png"
+import landing from "./landing.png";
+import home from "./home.png";
+import window from "./window.png";
+import gutter from "./gutter.png";
+import bulb from "./bulb.png";
 
 
 export {
@@ -55,4 +58,7 @@ export {
   people03,
   landing,
   home,
+  window,
+  bulb, 
+  gutter
 };

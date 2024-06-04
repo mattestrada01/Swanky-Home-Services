@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      flex: {
+        'basis-31': '0 0 31%',
+      },
     },
     screens: {
       xs: "480px",
