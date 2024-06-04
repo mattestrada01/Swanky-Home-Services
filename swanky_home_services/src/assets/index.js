@@ -25,6 +25,8 @@ import people02 from "./people02.png";
 import people03 from "./people03.png";
 import landing from "./landing.png";
 import home from "./home.png";
+import lex from "./lex.png"
+import cleaning from "./cleaning.mp4"
 
 
 
@@ -56,5 +58,7 @@ export {
   people03,
   landing,
   home,
+  lex,
+  cleaning,
 
 };
