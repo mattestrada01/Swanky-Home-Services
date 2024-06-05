@@ -18,7 +18,7 @@ const styles = {
     navLink: "relative transition-all duration-300",
     navLinkHover: "hover:text-white after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-2px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left",
   
-    bgGradient: "bg-gradient-to-b from-black to-yellow-600",
+    bgGradient: "bg-gradient-to-b from-black via-blue-400 via-cyan-500 to-yellow-600",
     bgB: "bg-black",
 
     navbarFixed: {

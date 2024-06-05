@@ -4,11 +4,11 @@ import { home, lex } from "../assets";
 
 const About = () => {
   return (
-    <div className="flex justify-center items-center py-20">
-      <div className="container mx-auto px-10">
+    <section id="about" className="flex justify-center items-center py-20 -mt-40 sm:mt-0 mb-28">
+      <div className="container mx-auto px-2">
         <div className="flex flex-col md:flex-row items-center">
           
-          <div className="md:w-1/2 flex flex-col items-center justify-center relative min-h-[600px]">
+          <div className="lg:w-1/2 flex flex-col items-center justify-center relative min-h-[600px]">
             <img 
               src={lex} 
               alt="Lex" 
@@ -22,7 +22,7 @@ const About = () => {
           </div>
 
 
-          <div className="md:w-1/2 flex flex-col items-center text-center md:text-left">
+          <div className="lg:w-1/2 flex flex-col items-center text-center md:text-left">
             <div className="text-white text-5xl font-semibold mb-6">
               About Our Company
             </div>
@@ -71,7 +71,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-      </div>
+      </section>
     
   )
 }

@@ -27,6 +27,7 @@ import landing from "./landing.png";
 import home from "./home.png";
 import lex from "./lex.png"
 import cleaning from "./cleaning.mp4"
+import stars from "./stars.png"
 
 
 
@@ -60,5 +61,6 @@ export {
   home,
   lex,
   cleaning,
+  stars,
 
 };

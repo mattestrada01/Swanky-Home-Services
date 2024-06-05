@@ -25,8 +25,14 @@ const App = () => (
         <Reviews />
         </div>
           <Contact />
-          <Footer />
+          
         </div>
+      </div>
+
+      <div className={`${styles.paddingX} ${styles.flexStart} ${styles.bgB}`}> 
+      <div className={`${styles.boxWidth}`}>
+        <Footer />
+      </div>
       </div>
     </div>
   </div>
