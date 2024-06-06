@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import { phone } from "../assets";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
   return (
     <section id="contact" className="flex flex-col items-center py-6 mt-10 mb-20">
@@ -10,7 +24,8 @@ const Contact = () => {
           <h1 className="rounded-xl text-4xl font-semibold text-white mb-4 text-center">Contact Us</h1>
           <hr className="mb-6 border-white w-1/2 mx-auto" />
           <div className="bg-gray-700 rounded-lg p-10 shadow-xl">
-            <form name="contact" method="POST" data-netlify="true" onSubmit="submit">
+            <form name="contact" method="POST" netlify>
+              <input type="hidden" name="form-name" value="contact" />
               <div className="mb-4">
                 <label htmlFor="name" className="block text-white">Name</label>
                 <input
@@ -18,39 +33,47 @@ const Contact = () => {
                   name="name"
                   id="name"
                   placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-white">Email</label>
+                <label htmlFor="email" className="block text-white">Email</label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   placeholder="Enter email address"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                   className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-white">Subject</label>
+                <label htmlFor="subject" className="block text-white">Subject</label>
                 <input
                   type="text"
                   name="subject"
                   id="subject"
                   placeholder="Enter your subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   required
                   className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-white">Message</label>
+                <label htmlFor="message" className="block text-white">Message</label>
                 <textarea
                   name="message"
                   id="message"
                   placeholder="Message"
                   rows="8"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                   className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                 ></textarea>
@@ -65,7 +88,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-6">
           <div className="text-2xl md:text-4xl font-semibold text-white mb-4">
             We can't wait to hear from you!
