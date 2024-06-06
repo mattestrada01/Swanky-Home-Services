@@ -6,7 +6,7 @@ const Footer = () => (
   <section className={`${styles.flexCenter} mb-6 mt-2 flex-col`}>
     <div className={`${styles.flexStart} mb-4 w-full`}>
       <div className="flex-[1] flex flex-row justify-start mr-10">
-      <a href="#hero">
+      <a href="#home">
         <img
           src={logo}
           alt="logo"
