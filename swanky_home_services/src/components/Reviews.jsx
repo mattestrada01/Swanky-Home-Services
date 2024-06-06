@@ -5,7 +5,7 @@ const Reviews = () => {
   const reviewLinks = [
     "https://www.google.com/maps/place/Swanky+Home+Services/@33.6409484,-118.1100381,10z/data=!3m1!4b1!4m6!3m5!1s0x832a2f7bdee52541:0xcee1b4e07f3237be!8m2!3d33.640814!4d-117.7803964!16s%2Fg%2F11y3m7wrb7?entry=ttu",
     "https://www.google.com/maps/place/Swanky+Home+Services/@33.6409484,-118.1100381,10z/data=!3m1!4b1!4m6!3m5!1s0x832a2f7bdee52541:0xcee1b4e07f3237be!8m2!3d33.640814!4d-117.7803964!16s%2Fg%2F11y3m7wrb7?entry=ttu",
-    "https://www.google.com/maps/place/Swanky+Home+Services/@33.6409484,-118.1100381,10z/data=!3m1!4b1!4m6!3m5!1s0x832a2f7bdee52541:0xcee1b4e07f3237be!8m2!3d33.640814!4d-117.7803964!16s%2Fg%2F11y3m7wrb7?entry=ttu",
+    "https://maps.app.goo.gl/A6Gg1gytP82wpPjh6",
   ];
 
   return (
