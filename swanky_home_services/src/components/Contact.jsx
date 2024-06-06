@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
 import { phone } from "../assets";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
+  const [isSent, setIsSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_z58a3nk', 'template_niodenk', e.target, 'wLEYks8rNw6-BI8OS')
+      .then((result) => {
+        console.log(result.text);
+        setIsSent(true); 
+      }, (error) => {
+        console.log(error.text);
+      });
+      e.target.reset();
+  }
 
   return (
     <section id="contact" className="flex flex-col items-center py-6 mt-10 mb-20">
@@ -10,21 +25,15 @@ const Contact = () => {
           <h1 className="rounded-xl text-4xl font-semibold text-white mb-4 text-center">Contact Us</h1>
           <hr className="mb-6 border-white w-1/2 mx-auto" />
           <div className="bg-gray-700 rounded-lg p-10 shadow-xl">
-            <form 
-              name="contact v1" 
-              method="post" 
-              data-netlify="true"
-              onSubmit="submit"
-            >
+            <form  onSubmit={sendEmail}>
 
-                <input type="hidden" name="form-name" value="contact v1" />
+                
 
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-white">Name</label>
                   <input
                     type="text"
                     name="name"
-                    id="name"
                     placeholder="Enter your name"
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
@@ -36,7 +45,6 @@ const Contact = () => {
                   <input
                     type="email"
                     name="email"
-                    id="email"
                     placeholder="Enter email address"
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
@@ -48,7 +56,6 @@ const Contact = () => {
                   <input
                     type="text"
                     name="subject"
-                    id="subject"
                     placeholder="Enter your subject"
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
@@ -59,23 +66,24 @@ const Contact = () => {
                   <label htmlFor="message" className="block text-white">Message</label>
                   <textarea
                     name="message"
-                    id="message"
-                    placeholder="Message"
+                    placeholder="Please Leave a Return Phone Number"
                     rows="8"
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                   ></textarea>
                 </div>
 
-                <button
+                <input
                   type="submit"
-                  className="w-full py-2 bg-transparent text-yellow-400 
-                  font-semibold rounded border-2 hover:bg-yellow-400 hover:text-black hover:border-white transition duration-300"
+                  value="Free Estimate!"
+                  className="w-full py-2 bg-transparent text-yellow-400 cursor-pointer 
+                  font-semibold rounded border-2 hover:bg-yellow-400 hover:text-black 
+                  hover:border-white transition duration-300 transform hover:scale-105"
                 >
-                  Free Estimate!
-                </button>
+                </input>
 
             </form>
+            {isSent && <div className="text-green-500 mt-4">Message sent successfully!</div>}
           </div>
         </div>
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-6">
