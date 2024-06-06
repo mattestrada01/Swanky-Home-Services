@@ -2,20 +2,6 @@ import React, { useState } from 'react';
 import { phone } from "../assets";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
 
   return (
     <section id="contact" className="flex flex-col items-center py-6 mt-10 mb-20">
@@ -40,8 +26,6 @@ const Contact = () => {
                     name="name"
                     id="name"
                     placeholder="Enter your name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                   />
@@ -54,8 +38,6 @@ const Contact = () => {
                     name="email"
                     id="email"
                     placeholder="Enter email address"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                   />
@@ -68,8 +50,6 @@ const Contact = () => {
                     name="subject"
                     id="subject"
                     placeholder="Enter your subject"
-                    value={formData.subject}
-                    onChange={handleChange}
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                   />
@@ -82,8 +62,6 @@ const Contact = () => {
                     id="message"
                     placeholder="Message"
                     rows="8"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
                   ></textarea>
