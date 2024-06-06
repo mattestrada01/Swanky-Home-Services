@@ -24,67 +24,79 @@ const Contact = () => {
           <h1 className="rounded-xl text-4xl font-semibold text-white mb-4 text-center">Contact Us</h1>
           <hr className="mb-6 border-white w-1/2 mx-auto" />
           <div className="bg-gray-700 rounded-lg p-10 shadow-xl">
-            <form name="contact" method="POST" netlify>
-              <input type="hidden" name="form-name" value="contact" />
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-white">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Enter your name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-white">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Enter email address"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="subject" className="block text-white">Subject</label>
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  placeholder="Enter your subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="message" className="block text-white">Message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Message"
-                  rows="8"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full py-2 bg-transparent text-yellow-400 
-                font-semibold rounded border-2 hover:bg-yellow-400 hover:text-black hover:border-white transition duration-300"
-              >
-                Free Estimate!
-              </button>
+            <form 
+              name="contact v1" 
+              method="post" 
+              data-netlify="true"
+              onSubmit="submit"
+            >
+
+                <input type="hidden" name="form-name" value="contact v1" />
+
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-white">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-white">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter email address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="subject" className="block text-white">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    placeholder="Enter your subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="message" className="block text-white">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                    rows="8"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-2 bg-transparent text-yellow-400 
+                  font-semibold rounded border-2 hover:bg-yellow-400 hover:text-black hover:border-white transition duration-300"
+                >
+                  Free Estimate!
+                </button>
+
             </form>
           </div>
         </div>
