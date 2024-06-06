@@ -8,7 +8,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-4 justify-between items-center" >
+    <nav id="home" className="w-full flex py-4 justify-between items-center" >
       <a href="#home" className="cursor-pointer" onClick={() => setActive("Home")}>
         <img src={logo} className="w-[200px] h-[100px] transition-transform duration-300 hover:scale-105" />
       </a>

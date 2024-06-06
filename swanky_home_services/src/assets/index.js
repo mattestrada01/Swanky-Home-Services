@@ -25,9 +25,12 @@ import people02 from "./people02.png";
 import people03 from "./people03.png";
 import landing from "./landing.png";
 import home from "./home.png";
-import lex from "./lex.png"
-import cleaning from "./cleaning.mp4"
-import stars from "./stars.png"
+import lex from "./lex.png";
+import cleaning from "./cleaning.mp4";
+import stars from "./stars.png";
+import window from "./window.png";
+import phone from "./phone.png";
+
 
 
 
@@ -62,5 +65,7 @@ export {
   lex,
   cleaning,
   stars,
+  window,
+  phone,
 
 };

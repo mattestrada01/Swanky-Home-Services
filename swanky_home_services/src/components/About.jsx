@@ -12,12 +12,12 @@ const About = () => {
             <img 
               src={lex} 
               alt="Lex" 
-              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 absolute -bottom-20 left-0 transform -translate-y-1/2 translate-x-1/3" 
+              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 absolute -bottom-20 left-0 transform -translate-y-1/2 translate-x-1/3" 
             />
             <img 
               src={home} 
               alt="Home" 
-              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 absolute top-20 right-0 transform translate-y-1/2 -translate-x-1/3"
+              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 absolute top-20 right-0 transform translate-y-1/2 -translate-x-1/3"
             />
           </div>
 

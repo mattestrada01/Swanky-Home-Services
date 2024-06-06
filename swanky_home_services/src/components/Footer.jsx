@@ -6,9 +6,14 @@ const Footer = () => (
   <section className={`${styles.flexCenter} mb-6 mt-2 flex-col`}>
     <div className={`${styles.flexStart} mb-4 w-full`}>
       <div className="flex-[1] flex flex-row justify-start mr-10">
-        <img src={logo} className="w-[266px] h-[72.14px] object-contain"
+      <a href="#hero">
+        <img
+          src={logo}
+          alt="logo"
+          className="w-[266px] h-[72.14px] object-contain cursor-pointer"
         />
-        <p className={`text-gray-300 mt-6 ml-20 max-w-[312px] whitespace-nowrap`}>
+      </a>
+        <p className={`text-gray-300 mt-6 ml-4 sm:ml-20 max-w-[312px] sm:whitespace-nowrap`}>
           Dedicating our craft to making your home spotless.
         </p>
       </div>

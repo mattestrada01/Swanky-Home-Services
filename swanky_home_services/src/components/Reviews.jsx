@@ -9,7 +9,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section id="reviews" className="testimonial py-12">
+    <section id="reviews" className="testimonial py-12 mb-20">
       <h1 className="text-3xl md:text-4xl font-semibold mb-2 text-blue-800 text-center">
         <span className="underline">What Our Clients Have to Say</span>
       </h1>

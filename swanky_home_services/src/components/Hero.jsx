@@ -4,7 +4,7 @@ import styles from '../style';
 
 const Hero = () => {
   return (
-    <div style={{ position: 'relative' }}>
+    <section id="hero" style={{ position: 'relative' }}>
       <img src={landing} alt="Landing" style={{ width: '100%', height: 'auto' }} />
       <div style={{
         position: 'absolute',
@@ -23,12 +23,13 @@ const Hero = () => {
           <p className="text-white text-sm ss:text-xl md:text-2xl sm:mb-4 mb-2">
             Transform your living space with our top-rated window cleaning, gutter maintenance, and holiday decorating services.
           </p>
-          <button className="bg-yellow-500 text-black font-semibold py-1 sm:py-2 px-1 sm:px-4 rounded md:text-xl sm:text-md text-xs border-2 border-transparent hover:bg-yellow-400 hover:border-white transition duration-300">
+          <a href="#contact" className="bg-yellow-500 text-black font-semibold py-1 sm:py-2 px-1 sm:px-4 rounded md:text-xl sm:text-md text-xs border-2 border-transparent hover:bg-yellow-400 hover:border-white transition duration-300">
             Free Estimate
-          </button>
+          </a>
+
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
