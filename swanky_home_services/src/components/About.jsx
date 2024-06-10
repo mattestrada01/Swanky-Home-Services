@@ -4,7 +4,7 @@ import { home, lex } from "../assets";
 
 const About = () => {
   return (
-    <section id="about" className="flex justify-center items-center py-20 -mt-40 sm:mt-0 mb-28">
+    <section id="about" className="flex justify-center items-center py-40 -mt-0 sm:mt-0 mb-28">
       <div className="container mx-auto px-2">
         <div className="flex flex-col md:flex-row items-center">
           

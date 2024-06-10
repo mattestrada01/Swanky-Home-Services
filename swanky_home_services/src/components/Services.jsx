@@ -4,7 +4,7 @@ import { cleaning } from "../assets";
 
 const Services = () => {
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-40 sm:mb-0 mb-20">
       <div className="text-white text-3xl md:text-4xl font-semibold text-center">Services We Offer</div>
       <hr className="my-4 border-white w-1/2 mx-auto" />
       <div className="text-white text-base md:text-lg px-4 md:px-0 leading-relaxed text-center">

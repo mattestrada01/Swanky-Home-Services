@@ -7,10 +7,35 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
+  const offsets = {
+    hero: 100,
+    services: -40,
+    about: window.innerWidth >= 768 ? 0 : -650, 
+    reviews: -30,
+    contact: window.innerWidth >= 768 ? 0 : -32,
+  };
+
+  const handleNavClick = (id) => {
+    setActive(id);
+    setToggle(false); // close the menu on mobile
+
+    const element = document.getElementById(id);
+    const offset = offsets[id] || 0; 
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  };
+
   return (
-    <nav id="home" className="w-full flex py-4 justify-between items-center" >
-      <a href="#home" className="cursor-pointer" onClick={() => setActive("Home")}>
-        <img src={logo} className="w-[200px] h-[100px] transition-transform duration-300 hover:scale-105" />
+    <nav id="home" className="w-full flex py-2 justify-between items-center">
+      <a className="cursor-pointer" onClick={() => handleNavClick("hero")}>
+        <img src={logo} className="w-[120px] h-[60px] sm:w-[170px] sm:h-[85px] transition-transform duration-300 hover:scale-105" />
       </a>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
@@ -18,9 +43,9 @@ const Navbar = () => {
           <li
             key={nav.id}
             className={`font-poppins cursor-pointer text-[16px] ${styles.navLink} ${styles.navLinkHover} ${active === nav.title ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mr-0" : "mr-12"}`}
-            onClick={() => setActive(nav.title)}
+            onClick={() => handleNavClick(nav.id)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <a>{nav.title}</a>
           </li>
         ))}
       </ul>
@@ -39,9 +64,9 @@ const Navbar = () => {
               <li
                 key={nav.id}
                 className={`font-poppins font-medium cursor-pointer text-[16px] ${styles.navLink} ${styles.navLinkHover} ${active === nav.title ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => setActive(nav.title)}
+                onClick={() => handleNavClick(nav.id)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <a>{nav.title}</a>
               </li>
             ))}
           </ul>

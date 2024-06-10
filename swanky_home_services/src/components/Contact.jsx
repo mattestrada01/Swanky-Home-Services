@@ -8,7 +8,7 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_z58a3nk', 'template_niodenk', e.target, 'wLEYks8rNw6-BI8OS')
+    emailjs.sendForm('service_dgqdv87', 'template_niodenk', e.target, 'wLEYks8rNw6-BI8OS')
       .then((result) => {
         console.log(result.text);
         setIsSent(true); 
@@ -19,7 +19,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="flex flex-col items-center py-6 mt-10 mb-20">
+    <section id="contact" className="flex flex-col items-center py-24 mt-10 mb-20">
       <div className="w-full max-w-6xl flex flex-wrap">
         <div className="w-full md:w-1/2 p-6">
           <h1 className="rounded-xl text-4xl font-semibold text-white mb-4 text-center">Contact Us</h1>

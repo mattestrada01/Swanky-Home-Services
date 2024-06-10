@@ -21,13 +21,7 @@ const styles = {
     bgGradient: "bg-gradient-to-b from-black via-blue-400 via-cyan-500 to-yellow-600",
     bgB: "bg-black",
 
-    navbarFixed: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      zIndex: 999, 
-      width: "100%",
-    },
+    navbarFixed: "fixed top-0 left-0 z-[10000] w-full",
   };
   
   export const layout = {
