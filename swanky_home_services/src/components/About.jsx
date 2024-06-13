@@ -12,13 +12,17 @@ const About = () => {
             <img 
               src={lex} 
               alt="Lex" 
-              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 absolute -bottom-20 left-0 transform -translate-y-1/2 translate-x-1/3" 
-            />
+              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 
+              absolute xl:-bottom-20 xl:left-0 xl:transform xl:-translate-y-1/2 xl:translate-x-1/3 
+              sm:bottom-60 sm:left-0 sm:transform sm:translate-y-0 sm:translate-x-0"
+/>
             <img 
               src={home} 
               alt="Home" 
-              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 absolute top-20 right-0 transform translate-y-1/2 -translate-x-1/3"
-            />
+              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 
+                absolute xl:top-20 xl:right-0 xl:transform xl:translate-y-1/2 xl:-translate-x-1/3 
+                sm:top-60 sm:right-20 sm:transform sm:translate-y-0 sm:translate-x-0"
+/>
           </div>
 
 

@@ -3,6 +3,12 @@ import { landing } from "../assets";
 import styles from '../style';
 
 const Hero = () => {
+
+  const estimateLink = [
+    "https://clienthub.getjobber.com/client_hubs/0825649d-9dfd-42b9-9e74-3daabadcd37f/public/work_request/new?source=social_media"
+  ];
+
+
   return (
     <section id="hero" style={{ position: 'relative' }}>
       <img src={landing} alt="Landing" style={{ width: '100%', height: 'auto' }} />
@@ -23,7 +29,7 @@ const Hero = () => {
           <p className="text-white text-sm ss:text-xl md:text-2xl sm:mb-4 mb-2">
             Transform your living space with our top-rated window cleaning, gutter maintenance, and holiday decorating services.
           </p>
-          <a href="#contact" className="bg-yellow-500 text-black font-semibold py-1 sm:py-2 px-1 sm:px-4 rounded md:text-xl sm:text-md text-xs border-2 border-transparent hover:bg-yellow-400 hover:border-white transition duration-300">
+          <a href={estimateLink} target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-black font-semibold py-1 sm:py-2 px-1 sm:px-4 rounded md:text-xl sm:text-md text-xs border-2 border-transparent hover:bg-yellow-400 hover:border-white transition duration-300">
             Free Estimate
           </a>
 
