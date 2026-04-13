@@ -35,14 +35,14 @@ const Navbar = () => {
   return (
     <nav id="home" className="w-full flex py-2 justify-between items-center">
       <a className="cursor-pointer" onClick={() => handleNavClick("hero")}>
-        <img src={logo} className="w-[120px] h-[60px] sm:w-[170px] sm:h-[85px] transition-transform duration-300 hover:scale-105" />
+        <img src={logo} className="w-[120px] h-[60px] sm:w-[160px] sm:h-[80px] transition-transform duration-300 hover:scale-105" />
       </a>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins cursor-pointer text-[16px] ${styles.navLink} ${styles.navLinkHover} ${active === nav.title ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mr-0" : "mr-12"}`}
+            className={`font-poppins cursor-pointer text-[15px] ${styles.navLink} ${styles.navLinkHover} ${active === nav.title ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mr-0" : "mr-12"}`}
             onClick={() => handleNavClick(nav.id)}
           >
             <a>{nav.title}</a>

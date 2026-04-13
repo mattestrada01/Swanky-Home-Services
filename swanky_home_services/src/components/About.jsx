@@ -27,7 +27,13 @@ const About = () => {
 
 
           <div className="lg:w-1/2 flex flex-col items-center text-center md:text-left">
-            <div className="text-white text-5xl font-semibold mb-6">
+            <div className="text-5xl font-semibold mb-6"
+            style={{
+              color: 'white', // Dark Navy
+              fontFamily: '"Playfair Display", serif', // Font family
+              letterSpacing: '1px', // Letter spacing
+              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' // Text shadow
+            }}>
               About Our Company
             </div>
 
@@ -56,15 +62,7 @@ const About = () => {
                     3. Customer-Centric Approach: Customer service is at the heart of everything we do. Our team 
                     members are friendly, approachable, and always ready to go the extra mile to 
                     ensure our clients are satisfied. 
-                </div>
-
-                <div className="text-white text-xl mb-4">
-                    4. Continuous Training: We invest in 
-                    continuous training and development for our team. This ensures they stay 
-                    up-to-date with the latest techniques, safety standards, and innovations in the 
-                    home services industry. 
-                </div>
-                
+                </div>               
                 
                 <div className="text-white text-2xl mt-4">
                     By combining expertise, a customer-focused mindset, and 

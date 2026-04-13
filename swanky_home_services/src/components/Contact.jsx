@@ -24,7 +24,7 @@ const Contact = () => {
         <div className="w-full md:w-1/2 p-6">
           <h1 className="rounded-xl text-4xl font-semibold text-white mb-4 text-center">Contact Us</h1>
           <hr className="mb-6 border-white w-1/2 mx-auto" />
-          <div className="bg-gray-700 rounded-lg p-10 shadow-xl">
+          <div className="bg-gray-700 rounded-lg px-10 py-6 shadow-xl">
             <form  onSubmit={sendEmail}>
 
                 
@@ -73,14 +73,16 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <input
-                  type="submit"
-                  value="Free Estimate!"
-                  className="w-full py-2 bg-transparent text-yellow-400 cursor-pointer 
-                  font-semibold rounded border-2 hover:bg-yellow-400 hover:text-black 
-                  hover:border-white transition duration-300 transform hover:scale-105"
-                >
-                </input>
+                <div className="flex justify-center items-center">
+                  <input
+                    type="submit"
+                    value="Free Estimate!"
+                    className="sm:w-1/2 w-full py-1 sm:py-2 bg-transparent text-yellow-400 cursor-pointer 
+                    font-semibold rounded border-2 hover:bg-yellow-400 hover:text-black 
+                    hover:border-white transition duration-300 transform hover:scale-105"
+                  >
+                  </input>
+                </div>
 
             </form>
             {isSent && <div className="text-green-500 mt-4">Message sent successfully!</div>}

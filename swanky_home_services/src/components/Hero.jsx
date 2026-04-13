@@ -11,7 +11,7 @@ const Hero = () => {
 
   return (
     <section id="hero" style={{ position: 'relative' }}>
-      <img src={landing} alt="Landing" style={{ width: '100%', height: 'auto' }} />
+      <img rel="preload" src={landing} alt="Landing" style={{ width: '100%', height: 'auto' }} />
       <div style={{
         position: 'absolute',
         top: 0,

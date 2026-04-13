@@ -10,16 +10,24 @@ const Reviews = () => {
 
   return (
     <section id="reviews" className="testimonial py-40 mb-20">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-2 text-blue-800 text-center">
-        <span className="underline">What Our Clients Have to Say</span>
+      <h1
+        className="text-3xl md:text-5xl font-semibold mb-2 text-center"
+        style={{
+          color: 'white', 
+          fontFamily: '"Playfair Display", serif', 
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' 
+        }}
+      >
+        <span>What Our Clients Have to Say</span>
       </h1>
-      <div className="text-lg md:text-xl mb-10 text-white text-center mt-8 mb-20">
+      <hr className="my-1 border-white w-1/2 mx-auto" />
+      <div className="text-lg md:text-xl mb-10 text-white text-center mt-8 mb-16">
         We prioritize our clients' needs and satisfaction above all else. Our commitment goes beyond business; we strive to 
         build lasting relationships and ensure every client feels valued and cared for.
       </div>
 
       <div className="flex flex-wrap justify-center mb-10">
-        <a href={reviewLinks[0]} target="_blank" rel="noopener noreferrer" className="sm:w-full md:w-[44%] bg-red-200 transition-transform duration-800 hover:shadow-xl hover:shadow-gray-500 rounded-lg mb-5 p-10 mx-5 flex cursor-pointer">
+        <a href={reviewLinks[0]} target="_blank" rel="noopener noreferrer" className="sm:w-full md:w-[44%] bg-red-200 transition-transform duration-800 hover:shadow-xl hover:shadow-red-300 rounded-lg mb-5 py-10 px-6 mx-5 flex cursor-pointer">
           <img src={people01} alt="User 1" className="h-20 w-20 ml-1 mr-6 rounded-full" />
           <div>
             <p className="text-left text-gray-600">
@@ -27,14 +35,14 @@ const Reviews = () => {
               into a sanctuary again. They tackled every corner of my home with precision and care. They left the windows spotless 
               and even helped me take down some leftover holiday lights.
               They were on time and they're super affordable, making the whole process smooth 
-              and stress-free. Highly recommend them to anyone :) 
+              and stress-free :) 
             </p>
             <h3 className="text-left font-bold text-xl mr-2">- Mathew E. </h3>
             <img src={stars} alt="stars" className="h-[24px] w-auto" />
           </div>
         </a>
 
-        <a href={reviewLinks[1]} target="_blank" rel="noopener noreferrer" className="sm:w-full md:w-[44%] bg-red-200 transition-transform duration-800 hover:shadow-xl hover:shadow-gray-500 rounded-lg mb-5 p-10 mx-5 flex cursor-pointer">
+        <a href={reviewLinks[1]} target="_blank" rel="noopener noreferrer" className="sm:w-full md:w-[44%] bg-red-200 transition-transform duration-800 hover:shadow-xl hover:shadow-red-300 rounded-lg mb-5 py-10 px-6 mx-5 flex cursor-pointer">
           <img src={people02} alt="User 2" className="h-20 w-20 ml-1 mr-6 rounded-full" />
           <div>
             <p className="text-left text-gray-600">
@@ -50,7 +58,7 @@ const Reviews = () => {
       </div>
 
       <div className="flex flex-wrap justify-center">
-        <a href={reviewLinks[2]} target="_blank" rel="noopener noreferrer" className="md:w-[45%] bg-red-200 rounded-lg transition-transform duration-800 hover:shadow-xl hover:shadow-gray-500 mb-5 p-10 mx-4 flex cursor-pointer hidden md:flex">
+        <a href={reviewLinks[2]} target="_blank" rel="noopener noreferrer" className="md:w-[45%] bg-red-200 rounded-lg transition-transform duration-800 hover:shadow-xl hover:shadow-red-300 mb-5 py-10 px-6 mx-4 flex cursor-pointer hidden md:flex">
           <img src={people03} alt="User 3" className="h-20 w-20 ml-1 mr-6 rounded-full" />
           <div>
             <p className="text-left text-gray-600">

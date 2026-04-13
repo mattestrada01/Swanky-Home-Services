@@ -30,9 +30,9 @@ import cleaning from "./cleaning.mp4";
 import stars from "./stars.png";
 import window from "./window.png";
 import phone from "./phone.png";
-
-
-
+import gutter from './gutter.png';
+import holiday from './holiday.png';
+import windows from './windows.png';
 
 export {
   airbnb,
@@ -67,5 +67,8 @@ export {
   stars,
   window,
   phone,
+  gutter,
+  holiday,
+  windows,
 
 };
