@@ -1,80 +1,58 @@
 import React from 'react';
-import { people01, people02, people03, stars } from "../assets";
-
+import { Star } from "lucide-react";
+ 
+const googleLink =
+  "https://www.google.com/maps/place/Swanky+Home+Services/@33.6409484,-118.1100381,10z/data=!3m1!4b1!4m6!3m5!1s0x832a2f7bdee52541:0xcee1b4e07f3237be!8m2!3d33.640814!4d-117.7803964!16s%2Fg%2F11y3m7wrb7?entry=ttu";
+ 
+const reviews = [
+  { name: "Sanjit T.", text: "Amazing job! Showed up on time and was extremely clean!!! Highly recommend." },
+  { name: "Jonathan M.", text: "These guys crushed it! Super clean setup, zero hassle. Showed up on time and got everything done fast." },
+  { name: "Joshua K.", text: "Everything came out great! Super clean set up and they really made sure to do their best." },
+  { name: "Nicholas S.", text: "Reliable and creative work! Stress free service that really took their time and made sure everything looked perfect." },
+  { name: "George V.", text: "Great company! They helped me from start to finish. The team delivered such great service. Will definitely reach out again!" },
+  { name: "Se Y.", text: "Best service in town, very easy to get in touch with and did an excellent job." },
+];
+ 
 const Reviews = () => {
-  const reviewLinks = [
-    "https://www.google.com/maps/place/Swanky+Home+Services/@33.6409484,-118.1100381,10z/data=!3m1!4b1!4m6!3m5!1s0x832a2f7bdee52541:0xcee1b4e07f3237be!8m2!3d33.640814!4d-117.7803964!16s%2Fg%2F11y3m7wrb7?entry=ttu",
-    "https://www.google.com/maps/place/Swanky+Home+Services/@33.6409484,-118.1100381,10z/data=!3m1!4b1!4m6!3m5!1s0x832a2f7bdee52541:0xcee1b4e07f3237be!8m2!3d33.640814!4d-117.7803964!16s%2Fg%2F11y3m7wrb7?entry=ttu",
-    "https://maps.app.goo.gl/A6Gg1gytP82wpPjh6",
-  ];
-
   return (
-    <section id="reviews" className="testimonial py-40 mb-20">
-      <h1
-        className="text-3xl md:text-5xl font-semibold mb-2 text-center"
-        style={{
-          color: 'white', 
-          fontFamily: '"Playfair Display", serif', 
-          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' 
-        }}
-      >
-        <span>What Our Clients Have to Say</span>
-      </h1>
-      <hr className="my-1 border-white w-1/2 mx-auto" />
-      <div className="text-lg md:text-xl mb-10 text-white text-center mt-8 mb-16">
-        We prioritize our clients' needs and satisfaction above all else. Our commitment goes beyond business; we strive to 
-        build lasting relationships and ensure every client feels valued and cared for.
-      </div>
-
-      <div className="flex flex-wrap justify-center mb-10">
-        <a href={reviewLinks[0]} target="_blank" rel="noopener noreferrer" className="sm:w-full md:w-[44%] bg-red-200 transition-transform duration-800 hover:shadow-xl hover:shadow-red-300 rounded-lg mb-5 py-10 px-6 mx-5 flex cursor-pointer">
-          <img src={people01} alt="User 1" className="h-20 w-20 ml-1 mr-6 rounded-full" />
-          <div>
-            <p className="text-left text-gray-600">
-              I work too much and neglected my home for a bit, but Mike helped me transform it 
-              into a sanctuary again. They tackled every corner of my home with precision and care. They left the windows spotless 
-              and even helped me take down some leftover holiday lights.
-              They were on time and they're super affordable, making the whole process smooth 
-              and stress-free :) 
-            </p>
-            <h3 className="text-left font-bold text-xl mr-2">- Mathew E. </h3>
-            <img src={stars} alt="stars" className="h-[24px] w-auto" />
-          </div>
-        </a>
-
-        <a href={reviewLinks[1]} target="_blank" rel="noopener noreferrer" className="sm:w-full md:w-[44%] bg-red-200 transition-transform duration-800 hover:shadow-xl hover:shadow-red-300 rounded-lg mb-5 py-10 px-6 mx-5 flex cursor-pointer">
-          <img src={people02} alt="User 2" className="h-20 w-20 ml-1 mr-6 rounded-full" />
-          <div>
-            <p className="text-left text-gray-600">
-              Michael was super friendly and his whole team was on time, the job was done very fast and 
-              I love having my whole house clean! It was a great experience and I loved working with them.
-               I highly recommend them for any of your house needs. I was really nervous to do the windows 
-               myself due to height, but Swanky Home Services helped reassure me and did an amazing job!
-            </p>
-            <h3 className="text-left font-bold text-xl mr-2">- Emulen B.</h3>
-            <img src={stars} alt="stars" className="h-[24px] w-auto" />
-          </div>
-        </a>
-      </div>
-
-      <div className="flex flex-wrap justify-center">
-        <a href={reviewLinks[2]} target="_blank" rel="noopener noreferrer" className="md:w-[45%] bg-red-200 rounded-lg transition-transform duration-800 hover:shadow-xl hover:shadow-red-300 mb-5 py-10 px-6 mx-4 flex cursor-pointer hidden md:flex">
-          <img src={people03} alt="User 3" className="h-20 w-20 ml-1 mr-6 rounded-full" />
-          <div>
-            <p className="text-left text-gray-600">
-              We have a 2-story home, so our windows are so hard to reach and we've been ignoring it
-              because of the spiders too. SO SCARY, but I found Mike and Lex who were perfect for this job.
-              They got it done like it was nothing! Definitely will have them back
-            </p>
-            <div className="flex items-center mt-4">
-              <h3 className="text-left font-bold text-xl mr-2">- Patricia V.</h3>
-              <img src={stars} alt="stars" className="h-[24px] w-auto" />
-            </div>
-          </div>
-        </a>
+    <section id="reviews" className="py-24 md:py-32 bg-[hsl(var(--background))]">
+      <div className="container mx-auto px-6">
+        <p className="text-[hsl(var(--primary))] font-['Inter'] text-sm tracking-[0.3em] uppercase text-center mb-4">
+          Testimonials
+        </p>
+        <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-center mb-4 text-[hsl(var(--foreground))]">
+          5.0 ★ on Google
+        </h2>
+        <p className="font-['Inter'] text-[hsl(var(--muted-foreground))] text-center mb-16">
+          50+ five-star reviews from happy homeowners
+        </p>
+ 
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {reviews.map((review) => (
+            <a
+              key={review.name}
+              href={googleLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 border border-[hsl(var(--border))] rounded-sm hover:border-[hsl(43,72%,55%,0.40)] transition-colors block"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-[hsl(var(--primary))] text-[hsl(var(--primary))] group-hover:scale-110 transition-transform" />
+                ))}
+              </div>
+              <p className="font-['Inter'] text-[hsl(var(--foreground))] text-sm leading-relaxed mb-4">
+                "{review.text}"
+              </p>
+              <p className="font-['Inter'] text-[hsl(var(--muted-foreground))] text-xs tracking-wide uppercase">
+                — {review.name}
+              </p>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
-
+ 
 export default Reviews;

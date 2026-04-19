@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { close, logo, menu } from "../assets";
-import { navLinks } from "../constants";
+import { Phone, Menu, X } from "lucide-react";
+import { logo } from "../assets";
 import styles from '../style';
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
-  const [toggle, setToggle] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const offsets = {
     hero: 100,
     services: -40,
-    about: window.innerWidth >= 768 ? 0 : -650, 
     reviews: -30,
     contact: window.innerWidth >= 768 ? 0 : -32,
   };
 
   const handleNavClick = (id) => {
     setActive(id);
-    setToggle(false); // close the menu on mobile
+    setOpen(false);
 
     const element = document.getElementById(id);
-    const offset = offsets[id] || 0; 
+    if (!element) return;
+    const offset = offsets[id] || 0;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -32,46 +32,68 @@ const Navbar = () => {
     });
   };
 
+  const navItems = [
+    { id: "hero", title: "Home" },
+    { id: "services", title: "Services" },
+    { id: "reviews", title: "Reviews" },
+    { id: "contact", title: "FAQ" },
+  ];
+
   return (
-    <nav id="home" className="w-full flex py-2 justify-between items-center">
-      <a className="cursor-pointer" onClick={() => handleNavClick("hero")}>
-        <img src={logo} className="w-[120px] h-[60px] sm:w-[160px] sm:h-[80px] transition-transform duration-300 hover:scale-105" />
-      </a>
+    <nav className="fixed top-0 left-0 right-0 z-[10000] bg-black/90 backdrop-blur-md border-b border-[hsl(var(--border))]">
+      <div className="container mx-auto px-6 flex items-center justify-between h-20">
 
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        {navLinks.map((nav, index) => (
-          <li
-            key={nav.id}
-            className={`font-poppins cursor-pointer text-[15px] ${styles.navLink} ${styles.navLinkHover} ${active === nav.title ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mr-0" : "mr-12"}`}
-            onClick={() => handleNavClick(nav.id)}
+        {/* Logo */}
+        <a className="cursor-pointer flex items-center" onClick={() => handleNavClick("hero")}>
+          <img src={logo} alt="Swanky Home Services" className="h-20 w-auto" />
+        </a>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((nav) => (
+            <a
+              key={nav.id}
+              onClick={() => handleNavClick(nav.id)}
+              className={`font-['Inter'] text-sm cursor-pointer transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-2px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left ${active === nav.title ? "text-white" : "text-[hsl(var(--muted-foreground))] hover:text-white"}`}            >
+              {nav.title}
+            </a>
+          ))}
+          <a
+            href="tel:+15622857619"
+            className="inline-flex items-center gap-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] px-5 py-2 rounded-sm font-['Inter'] font-semibold text-xs tracking-wide uppercase hover:bg-[hsl(var(--gold-glow))] transition-colors duration-300"
           >
-            <a>{nav.title}</a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="sm:hidden flex flex-1 justify-end items-center">
-        <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] object-contain"
-          onClick={() => setToggle(!toggle)}
-        />
-
-        <div className={`${!toggle ? "hidden" : "flex"} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-50`}>
-          <ul className="list-none flex justify-end items-start flex-1 flex-col">
-            {navLinks.map((nav, index) => (
-              <li
-                key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] ${styles.navLink} ${styles.navLinkHover} ${active === nav.title ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => handleNavClick(nav.id)}
-              >
-                <a>{nav.title}</a>
-              </li>
-            ))}
-          </ul>
+            <Phone className="w-3.5 h-3.5" />
+            Call Now
+          </a>
         </div>
+
+        {/* Mobile toggle */}
+        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-black border-b border-[hsl(var(--border))] px-6 pb-6 space-y-4">
+          {navItems.map((nav) => (
+            <a
+              key={nav.id}
+              onClick={() => handleNavClick(nav.id)}
+              className="block font-['Inter'] text-sm cursor-pointer text-[hsl(var(--muted-foreground))] hover:text-white transition-colors"
+            >
+              {nav.title}
+            </a>
+          ))}
+          <a
+            href="tel:+15622857619"
+            className="inline-flex items-center gap-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] px-5 py-2 rounded-sm font-['Inter'] font-semibold text-xs tracking-wide uppercase hover:bg-[hsl(var(--gold-glow))] transition-colors duration-300"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            Call Now
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
