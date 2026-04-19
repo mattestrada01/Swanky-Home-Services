@@ -4,7 +4,7 @@ import { logo } from "../assets";
 import styles from '../style';
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
 
   const offsets = {
