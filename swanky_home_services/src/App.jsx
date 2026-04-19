@@ -10,23 +10,25 @@ const App = () => (
       </div>
     </div>
 
-    <div className={`${styles.bgGradient} pt-20 sm:pt-10`}>
+    <div className="bg-[hsl(var(--background))] pt-20 sm:pt-10">
       <div className={`${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Hero id="home" />
         </div>
       </div>
 
-      <div className={`${styles.flexStart} ${styles.paddingX} ${styles.bgGradient}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Services id="services" />
-          <About id="about" />
-          <Reviews id="reviews" />
-          <Contact id="contact" />
+      <div className="w-full bg-[hsl(var(--background))]">
+        <Services id="services" />
+        <div className={`${styles.paddingX}`}>
+          <div className={`${styles.boxWidth} mx-auto`}>
+            <About id="about" />
+            <Reviews id="reviews" />
+            <Contact id="contact" />
+          </div>
         </div>
       </div>
 
-      <div className={`${styles.paddingX} ${styles.flexStart} ${styles.bgB}`}> 
+      <div className={`${styles.paddingX} ${styles.flexStart} ${styles.bgB}`}>
         <div className={`${styles.boxWidth}`}>
           <Footer />
         </div>

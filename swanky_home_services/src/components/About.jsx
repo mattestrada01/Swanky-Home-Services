@@ -1,81 +1,76 @@
 import React from 'react';
-import { home, lex } from "../assets";
+import beforeImg from "../assets/solar-before.jpg";
+import afterImg from "../assets/solar-after.jpg";
 
+const estimateLink =
+  "https://clienthub.getjobber.com/client_hubs/0825649d-9dfd-42b9-9e74-3daabadcd37f/public/work_request/new?source=social_media";
 
-const About = () => {
-  return (
-    <section id="about" className="flex justify-center items-center py-40 -mt-0 sm:mt-0 mb-28">
-      <div className="container mx-auto px-2">
-        <div className="flex flex-col md:flex-row items-center">
-          
-          <div className="lg:w-1/2 flex flex-col items-center justify-center relative min-h-[600px]">
-            <img 
-              src={lex} 
-              alt="Lex" 
-              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 
-              absolute xl:-bottom-20 xl:left-0 xl:transform xl:-translate-y-1/2 xl:translate-x-1/3 
-              sm:bottom-60 sm:left-0 sm:transform sm:translate-y-0 sm:translate-x-0"
-/>
-            <img 
-              src={home} 
-              alt="Home" 
-              className="w-[350px] h-auto rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-200 
-                absolute xl:top-20 xl:right-0 xl:transform xl:translate-y-1/2 xl:-translate-x-1/3 
-                sm:top-60 sm:right-20 sm:transform sm:translate-y-0 sm:translate-x-0"
-/>
+const About = () => (
+  <section id="about" className="py-24 md:py-32 bg-[hsl(var(--background))]">
+    <div className="container mx-auto px-6">
+      <p className="text-[hsl(var(--primary))] font-['Inter'] text-sm tracking-[0.3em] uppercase text-center mb-4">
+        Real Results
+      </p>
+      <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-center mb-6 text-[hsl(var(--foreground))]">
+        Before &amp; After
+      </h2>
+      <p className="font-['Inter'] text-[hsl(var(--muted-foreground))] text-center max-w-xl mx-auto mb-16 text-sm leading-relaxed">
+        See the difference professional cleaning makes. Dirty panels lose up to 30% efficiency — we bring them back to peak performance.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-20 max-w-5xl mx-auto">
+        {/* Before */}
+        <div className="relative overflow-hidden rounded-sm border border-[hsl(var(--border))]">
+          <img
+            src={beforeImg}
+            alt="Dirty solar panels covered in dust and grime"
+            width={960}
+            height={640}
+            loading="lazy"
+            className="w-full h-64 md:h-80 object-cover"
+          />
+          <span className="absolute top-4 left-4 bg-red-600 text-white font-['Inter'] text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-sm">
+            Before
+          </span>
+          <div className="p-5">
+            <p className="font-['Playfair_Display'] text-lg font-semibold text-[hsl(var(--foreground))] mb-1">–30% Efficiency</p>
+            <p className="font-['Inter'] text-[hsl(var(--muted-foreground))] text-sm">Dust, pollen &amp; debris block sunlight and reduce output.</p>
           </div>
-
-
-          <div className="lg:w-1/2 flex flex-col items-center text-center md:text-left">
-            <div className="text-5xl font-semibold mb-6"
-            style={{
-              color: 'white', // Dark Navy
-              fontFamily: '"Playfair Display", serif', // Font family
-              letterSpacing: '1px', // Letter spacing
-              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' // Text shadow
-            }}>
-              About Our Company
-            </div>
-
-                <div className="text-white text-2xl space-y-4 mb-8">
-                At Swanky Home Services, our team members are what truly set us apart from other 
-                home services companies. Each team member is carefully selected for their 
-                expertise, dedication, and commitment to customer satisfaction. Here's what makes 
-                our team outstanding
-                </div> 
-                
-                <div className="text-white text-xl mb-4">
-                    1. Experienced Professionals: Our staff consists of 
-                    seasoned professionals with years of experience in window cleaning, gutter 
-                    cleaning, and holiday lighting. They bring a wealth of knowledge and technical 
-                    skill to every project. 
-                </div>
-                
-                <div className="text-white text-xl mb-4">
-                    2. Attention to Detail: Our team is renowned for 
-                    their meticulous attention to detail. Whether it's ensuring every window is 
-                    streak-free, gutters are thoroughly cleared, or holiday lights are perfectly 
-                    arranged, they take pride in delivering flawless results. 
-                </div>
-
-                <div className="text-white text-xl mb-4">
-                    3. Customer-Centric Approach: Customer service is at the heart of everything we do. Our team 
-                    members are friendly, approachable, and always ready to go the extra mile to 
-                    ensure our clients are satisfied. 
-                </div>               
-                
-                <div className="text-white text-2xl mt-4">
-                    By combining expertise, a customer-focused mindset, and 
-                    a dedication to quality, our team at Swanky Home Services stands out as the 
-                    premier choice for home services in Orange County.
-                </div>
-                
-                </div>
-            </div>
         </div>
-      </section>
-    
-  )
-}
+
+        {/* After */}
+        <div className="relative overflow-hidden rounded-sm border border-[hsl(43,72%,55%,0.30)]">
+          <img
+            src={afterImg}
+            alt="Clean gleaming solar panels reflecting sunlight"
+            width={960}
+            height={640}
+            loading="lazy"
+            className="w-full h-64 md:h-80 object-cover"
+          />
+          <span className="absolute top-4 left-4 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] font-['Inter'] text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-sm">
+            After
+          </span>
+          <div className="p-5">
+            <p className="font-['Playfair_Display'] text-lg font-semibold text-[hsl(var(--primary))] mb-1">100% Restored</p>
+            <p className="font-['Inter'] text-[hsl(var(--muted-foreground))] text-sm">Professional deionized water cleaning maximizes energy production.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="text-center mt-14">
+        <a
+          href={estimateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] px-8 py-4 rounded-sm font-['Inter'] font-semibold text-sm tracking-wide uppercase hover:bg-[hsl(var(--gold-glow))] transition-colors duration-300"
+        >
+          Get Your Free Quote
+        </a>
+      </div>
+    </div>
+  </section>
+);
 
 export default About;

@@ -96,10 +96,10 @@ const Contact = () => {
             Fill out our contact form, and we will get back to you promptly or reach out
             through the methods below:
           </div>
-          <a href="tel:714-330-3702" className="flex items-center justify-between w-3/4 max-w-xs cursor-pointer mb-2 mr-8">
+          <a href="tel:562-285-7619" className="flex items-center justify-between w-3/4 max-w-xs cursor-pointer mb-2 mr-8">
             <img src={phone} alt="phone" className="w-30 h-20 mt-4" />
-            <div className="text-gray-700 underline font-bold text-left text-3xl">
-              714-330-3702
+            <div className="text-gradient-gold underline font-bold text-left text-3xl">
+              562-285-7619
             </div>
           </a>
           <iframe
