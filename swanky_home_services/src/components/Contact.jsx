@@ -1,116 +1,115 @@
 import React, { useState } from 'react';
-import { phone } from "../assets";
+import { Phone, MapPin } from "lucide-react";
 import emailjs from 'emailjs-com';
+
+const googleLink =
+  "https://www.google.com/maps/place/Swanky+Home+Services/@33.6409484,-118.1100381,10z/data=!3m1!4b1!4m6!3m5!1s0x832a2f7bdee52541:0xcee1b4e07f3237be!8m2!3d33.640814!4d-117.7803964!16s%2Fg%2F11y3m7wrb7?entry=ttu";
 
 const Contact = () => {
   const [isSent, setIsSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs.sendForm('service_dgqdv87', 'template_niodenk', e.target, 'wLEYks8rNw6-BI8OS')
       .then((result) => {
         console.log(result.text);
-        setIsSent(true); 
+        setIsSent(true);
+        setLoading(false);
       }, (error) => {
         console.log(error.text);
+        setLoading(false);
       });
-      e.target.reset();
-  }
+
+    e.target.reset();
+  };
 
   return (
-    <section id="contact" className="flex flex-col items-center py-24 mt-10 mb-20">
-      <div className="w-full max-w-6xl flex flex-wrap">
-        <div className="w-full md:w-1/2 p-6">
-          <h1 className="rounded-xl text-4xl font-semibold text-white mb-4 text-center">Contact Us</h1>
-          <hr className="mb-6 border-white w-1/2 mx-auto" />
-          <div className="bg-gray-700 rounded-lg px-10 py-6 shadow-xl">
-            <form  onSubmit={sendEmail}>
+    <section id="contact" className="py-24 md:py-32 bg-[hsl(var(--card))]">
+      <div className="container mx-auto px-6">
+        <p className="text-[hsl(var(--primary))] font-['Inter'] text-sm tracking-[0.3em] uppercase text-center mb-4">
+          Get Started
+        </p>
+        <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-center mb-16 text-[hsl(var(--foreground))]">
+          Free Quote
+        </h2>
 
-                
+        <div className="grid lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
 
-                <div className="mb-4">
-                  <label htmlFor="name" className="block text-white">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your name"
-                    required
-                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                  />
-                </div>
 
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-white">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter email address"
-                    required
-                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                  />
-                </div>
-
-                <div className="mb-4">
-                  <label htmlFor="subject" className="block text-white">Subject</label>
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Enter your subject"
-                    required
-                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                  />
-                </div>
-
-                <div className="mb-4">
-                  <label htmlFor="message" className="block text-white">Message</label>
-                  <textarea
-                    name="message"
-                    placeholder="Please Leave a Return Phone Number"
-                    rows="8"
-                    required
-                    className="w-full p-2 mt-2 rounded bg-gray-900 text-white"
-                  ></textarea>
-                </div>
-
-                <div className="flex justify-center items-center">
-                  <input
-                    type="submit"
-                    value="Free Estimate!"
-                    className="sm:w-1/2 w-full py-1 sm:py-2 bg-transparent text-yellow-400 cursor-pointer 
-                    font-semibold rounded border-2 hover:bg-yellow-400 hover:text-black 
-                    hover:border-white transition duration-300 transform hover:scale-105"
-                  >
-                  </input>
-                </div>
-
-            </form>
-            {isSent && <div className="text-green-500 mt-4">Message sent successfully!</div>}
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-6">
-          <div className="text-2xl md:text-4xl font-semibold text-white mb-4">
-            We can't wait to hear from you!
-          </div>
-          <div className="text-white text-center text-xl mb-4">
-            Fill out our contact form, and we will get back to you promptly or reach out
-            through the methods below:
-          </div>
-          <a href="tel:562-285-7619" className="flex items-center justify-between w-3/4 max-w-xs cursor-pointer mb-2 mr-8">
-            <img src={phone} alt="phone" className="w-30 h-20 mt-4" />
-            <div className="text-gradient-gold underline font-bold text-left text-3xl">
-              562-285-7619
+          <div className="flex flex-col justify-center space-y-8">
+            <div>
+              <h3 className="font-['Playfair_Display'] text-2xl font-semibold text-[hsl(var(--foreground))] mb-2">
+                Ready to boost your solar efficiency?
+              </h3>
+              <p className="text-[hsl(var(--muted-foreground))] font-['Inter'] text-sm leading-relaxed">
+                Get in touch today for a free, no-obligation quote. We serve Cypress, CA and surrounding Orange County areas.
+              </p>
             </div>
-          </a>
-          <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106060.41676840428!2d-118.10128335463185!3d33.828102621097045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc925c54d5f7cf%3A0xdea6c3618ff0d607!2sOrange%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1717633372722!5m2!1sen!2sus"              width="80%"
-              height="260"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="mt-10 rounded-lg shadow-xl"
-            ></iframe>
+
+            <div className="space-y-4">
+
+              <a
+                href="tel:+15622857619"
+                className="flex items-center gap-3 text-[hsl(var(--foreground))] hover:text-[hsl(var(--primary))] transition-colors duration-300 font-['Inter'] group"
+              >
+                <Phone className="w-5 h-5 text-[hsl(var(--primary))] group-hover:scale-110 transition-transform" />
+                (562) 285-7619
+              </a>
+
+              <a
+                href={googleLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-[hsl(var(--foreground))] hover:text-[hsl(var(--primary))] transition-colors duration-300 font-['Inter'] group"
+              >
+                <MapPin className="w-5 h-5 text-[hsl(var(--primary))] group-hover:scale-110 transition-transform" />
+                Cypress, CA 90630
+              </a>
+            </div>
+          </div>
+
+
+          {isSent ? (
+            <div className="flex items-center justify-center border border-[hsl(43,72%,55%,0.30)] rounded-sm p-12">
+              <div className="text-center">
+                <p className="font-['Playfair_Display'] text-2xl font-semibold text-[hsl(var(--primary))] mb-2">Thank You!</p>
+                <p className="text-[hsl(var(--muted-foreground))] font-['Inter'] text-sm">We'll get back to you within 24 hours.</p>
+              </div>
+            </div>
+          ) : (
+            <form onSubmit={sendEmail} className="space-y-5">
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                className="w-full bg-[hsl(var(--background))] border border-[hsl(var(--border))] rounded-sm px-4 py-3 font-['Inter'] text-sm text-[hsl(var(--foreground))] placeholder:text-[hsl(var(--muted-foreground))] focus:outline-none focus:border-[hsl(43,72%,55%,0.50)] transition-colors"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+                className="w-full bg-[hsl(var(--background))] border border-[hsl(var(--border))] rounded-sm px-4 py-3 font-['Inter'] text-sm text-[hsl(var(--foreground))] placeholder:text-[hsl(var(--muted-foreground))] focus:outline-none focus:border-[hsl(43,72%,55%,0.50)] transition-colors"
+              />
+              <textarea
+                name="message"
+                placeholder="Tell us about your project..."
+                rows={4}
+                className="w-full bg-[hsl(var(--background))] border border-[hsl(var(--border))] rounded-sm px-4 py-3 font-['Inter'] text-sm text-[hsl(var(--foreground))] placeholder:text-[hsl(var(--muted-foreground))] focus:outline-none focus:border-[hsl(43,72%,55%,0.50)] transition-colors resize-none"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] px-8 py-4 rounded-sm font-['Inter'] font-semibold text-sm tracking-wide uppercase hover:bg-[hsl(var(--gold-glow))] transition-colors duration-300 disabled:opacity-50"
+              >
+                {loading ? "Sending..." : "Request Free Quote"}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>

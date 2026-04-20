@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import Reviews from "./Reviews";
 import Services from "./Services";
+import FAQ from "./FAQ";
 
 export {
     Navbar,
@@ -13,5 +14,6 @@ export {
     Footer,
     Hero,
     Reviews,
-    Services
+    Services,
+    FAQ
 };

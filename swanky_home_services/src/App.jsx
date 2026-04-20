@@ -1,6 +1,6 @@
 import styles from './style';
 
-import { Navbar, About, Contact, Footer, Hero, Reviews, Services } from './components';
+import { Navbar, About, Contact, Footer, Hero, Reviews, Services, FAQ } from './components';
 
 const App = () => (
   <div className="w-full overflow-hidden">
@@ -23,9 +23,10 @@ const App = () => (
           <div className={`${styles.boxWidth} mx-auto`}>
             <About id="about" />
             <Reviews id="reviews" />
-            <Contact id="contact" />
+            <FAQ id="faq" />
           </div>
         </div>
+        <Contact id="contact" />
       </div>
 
       <div className={`${styles.paddingX} ${styles.flexStart} ${styles.bgB}`}>

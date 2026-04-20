@@ -19,7 +19,7 @@ const About = () => (
       </p>
 
       <div className="grid md:grid-cols-2 gap-20 max-w-5xl mx-auto">
-        {/* Before */}
+
         <div className="relative overflow-hidden rounded-sm border border-[hsl(var(--border))]">
           <img
             src={beforeImg}
@@ -38,7 +38,7 @@ const About = () => (
           </div>
         </div>
 
-        {/* After */}
+
         <div className="relative overflow-hidden rounded-sm border border-[hsl(43,72%,55%,0.30)]">
           <img
             src={afterImg}
@@ -58,7 +58,7 @@ const About = () => (
         </div>
       </div>
 
-      {/* CTA */}
+
       <div className="text-center mt-14">
         <a
           href={estimateLink}

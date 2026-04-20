@@ -9,8 +9,9 @@ const Navbar = () => {
 
   const offsets = {
     hero: 100,
-    services: -40,
-    reviews: -30,
+    services: -10,
+    FAQ: 50,
+    reviews: 0,
     contact: window.innerWidth >= 768 ? 0 : -32,
   };
 
@@ -36,7 +37,7 @@ const Navbar = () => {
     { id: "hero", title: "Home" },
     { id: "services", title: "Services" },
     { id: "reviews", title: "Reviews" },
-    { id: "contact", title: "FAQ" },
+    { id: "FAQ", title: "FAQ" },
   ];
 
   return (
