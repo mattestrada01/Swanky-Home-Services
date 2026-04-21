@@ -14,7 +14,7 @@ const Footer = () => {
     <section className={`${styles.flexCenter} mb-10 mt-8 flex-col w-full`}>
       <div className={`${styles.flexStart} mb-4 w-full`}>
         <div className="flex-[1] flex flex-row justify-start mr-10">
-          <a onClick={handleLogoClick}>
+          <a href="#hero" onClick={(e) => { e.preventDefault(); handleLogoClick(); }}>
             <img
               src={logo}
               alt="logo"
@@ -35,15 +35,20 @@ const Footer = () => {
 
           <div className="flex flex-row md:mt-0 mt-6">
             {socialMedia.map((social, index) => (
-              <img
+              <a
                 key={social.id}
-                src={social.icon}
-                alt={social.id}
-                className={`w-[21px] h-[21px] object-contain cursor-pointer ${
-                  index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-                }`}
-                onClick={() => window.open(social.link)}
-              />
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={social.icon}
+                  alt={social.id}
+                  className={`w-[21px] h-[21px] object-contain cursor-pointer ${
+                    index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+                  }`}
+                />
+              </a>
             ))}
           </div>
         </div>

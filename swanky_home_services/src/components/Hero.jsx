@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from "../assets/hero-solar.jpg";
+import heroImage from "../assets/hero-solar.webp";
 import { Phone } from "lucide-react";
 
 const estimateLink =

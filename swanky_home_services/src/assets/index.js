@@ -1,4 +1,4 @@
-import logo from "./logo.png";
+import logo from "./logo.webp";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import facebook from "./facebook.svg";

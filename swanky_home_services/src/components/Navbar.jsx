@@ -15,7 +15,8 @@ const Navbar = () => {
     contact: window.innerWidth >= 768 ? 0 : -32,
   };
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
     setActive(id);
     setOpen(false);
 
@@ -45,7 +46,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex items-center justify-between h-20">
 
         {/* Logo */}
-        <a className="cursor-pointer flex items-center" onClick={() => handleNavClick("hero")}>
+        <a href="#hero" className="cursor-pointer flex items-center" onClick={(e) => handleNavClick(e, "hero")}>
           <img src={logo} alt="Swanky Home Services" className="h-20 w-auto" />
         </a>
 
@@ -54,8 +55,10 @@ const Navbar = () => {
           {navItems.map((nav) => (
             <a
               key={nav.id}
-              onClick={() => handleNavClick(nav.id)}
-              className={`font-['Inter'] text-sm cursor-pointer transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-2px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left ${active === nav.title ? "text-white" : "text-[hsl(var(--muted-foreground))] hover:text-white"}`}            >
+              href={`#${nav.id}`}
+              onClick={(e) => handleNavClick(e, nav.id)}
+              className={`font-['Inter'] text-sm cursor-pointer transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-2px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left ${active === nav.title ? "text-white" : "text-[hsl(var(--muted-foreground))] hover:text-white"}`}
+            >
               {nav.title}
             </a>
           ))}
@@ -80,7 +83,8 @@ const Navbar = () => {
           {navItems.map((nav) => (
             <a
               key={nav.id}
-              onClick={() => handleNavClick(nav.id)}
+              href={`#${nav.id}`}
+              onClick={(e) => handleNavClick(e, nav.id)}
               className="block font-['Inter'] text-sm cursor-pointer text-[hsl(var(--muted-foreground))] hover:text-white transition-colors"
             >
               {nav.title}

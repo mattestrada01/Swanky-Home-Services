@@ -1,6 +1,6 @@
 import React from 'react';
-import beforeImg from "../assets/solar-before.jpg";
-import afterImg from "../assets/solar-after.jpg";
+import beforeImg from "../assets/solar-before.webp";
+import afterImg from "../assets/solar-after.webp";
 
 const estimateLink =
   "https://clienthub.getjobber.com/client_hubs/0825649d-9dfd-42b9-9e74-3daabadcd37f/public/work_request/new?source=social_media";
