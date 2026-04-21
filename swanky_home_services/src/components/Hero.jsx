@@ -13,6 +13,7 @@ const Hero = () => {
         alt="Gleaming solar panels on a modern home at golden hour in Cypress, California"
         width={1920}
         height={1080}
+        fetchPriority="high"
         className="absolute inset-0 w-full h-full object-cover"
       />
 

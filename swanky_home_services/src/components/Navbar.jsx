@@ -47,7 +47,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <a href="#hero" className="cursor-pointer flex items-center" onClick={(e) => handleNavClick(e, "hero")}>
-          <img src={logo} alt="Swanky Home Services" className="h-20 w-auto" />
+          <img src={logo} alt="Swanky Home Services" width={160} height={80} className="h-20 w-auto" />
         </a>
 
         {/* Desktop nav */}
@@ -72,7 +72,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
+        <button onClick={() => setOpen(!open)} className="md:hidden text-white" aria-label="Toggle menu">
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
