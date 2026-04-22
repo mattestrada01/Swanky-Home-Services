@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { logo } from "../assets";
-import styles from '../style';
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -12,26 +11,10 @@ const Navbar = () => {
     setActive(id);
     setOpen(false);
 
-    const offsets = {
-      hero: 100,
-      services: -10,
-      FAQ: 50,
-      reviews: 0,
-      contact: window.innerWidth >= 768 ? 0 : -32,
-    };
-
     const element = document.getElementById(id);
     if (!element) return;
-    const offset = offsets[id] || 0;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = element.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition - offset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const navItems = [

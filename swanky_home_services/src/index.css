@@ -152,3 +152,19 @@
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
 }
+
+#hero { 
+  scroll-margin-top: 80px; 
+}
+
+#FAQ { 
+  scroll-margin-top: 100px; 
+}
+
+#reviews { 
+  scroll-margin-top: 60px; 
+}
+
+#services { 
+  scroll-margin-top: 60px; 
+}
