@@ -7,18 +7,18 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
 
-  const offsets = {
-    hero: 100,
-    services: -10,
-    FAQ: 50,
-    reviews: 0,
-    contact: window.innerWidth >= 768 ? 0 : -32,
-  };
-
   const handleNavClick = (e, id) => {
     e.preventDefault();
     setActive(id);
     setOpen(false);
+
+    const offsets = {
+      hero: 100,
+      services: -10,
+      FAQ: 50,
+      reviews: 0,
+      contact: window.innerWidth >= 768 ? 0 : -32,
+    };
 
     const element = document.getElementById(id);
     if (!element) return;
